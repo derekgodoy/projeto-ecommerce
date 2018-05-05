@@ -38,7 +38,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mx-auto">
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="index.php"><i class="fas fa-home text-primary"></i> Página Inicial</a>
 				</li>
 				<li class="nav-item dropdown">
@@ -65,7 +65,7 @@
 	</div>
 		<div class="row bg-light justify-content-center">
 		<div class="bg-primary col-sm-4 col-5 rounded ">
-		<h3 class="col text-center mt-3">Cadastro do Usuário</h3>
+		<h3 class="col text-center text-light mt-3">Cadastro do Usuário</h3>
 		</div>
 		</div>
 						<div class="row mt-3 justify-content-center">
@@ -132,11 +132,67 @@
 					</div>
 
 
-	<div class="text-center p-4 bg-light">
-		<h3>Loja Daora</h3>
-		<h4>Av. das Américas, 123</h4>
-		<h4>21231-123 - Rio de Janeiro RJ</h4>
-	</div>
+	<footer class=" row bg-primary text-light">
+            <div class="container mt-5 mb-4 text-center text-md-left">
+                <div class="row mt-1">
+                    <div class="col-md-4 col-lg-4 col-xl-4 text-center">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <strong class="">Departamentos</strong>
+                        </h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 150px">
+                            <p>telefonia</p>
+                            <p>informática</p>
+                            <p>tvs e áudio</p>
+                            <p>eletrodomésticos</p>
+							<p>games</p>
+							<p>livros</p>
+							<p>filmes</p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 col-xl-4 text-center">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <strong>Contato</strong>
+                        </h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 80px;">
+                        <p>
+                            <i class="fa fa-home mr-3"></i>Av. das Américas, 1233</p>
+                        <p>
+                            <i class="fa fa-envelope mr-3"></i>lojadaora@gmail.com</p>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-4 text-center">
+                             <h6 class="text-uppercase font-weight-bold">
+                            <strong>Compre pelo Telefone</strong>
+                        </h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 180px;">
+                        <p style="font-size: 22pt;"><i class="fa fa-phone mr-4 mt-4"></i>(21) 2578-9899</p>
+                        <p>segunda à sexta: 8h30 às 22h</br>
+                            sábado e domingo: 9h às 22h</br>
+                            (excetos feriados)</p>
+                    </div>
+					
+                    <div class="col-12 ">
+		                <div class=" text-center mb-5">
+	                        <i class="fab fa-facebook-f fa-2x fa-fw"></i>
+	                        <i class="fab fa-twitter fa-2x fa-fw"></i>
+	                        <i class="fab fa-google-plus-g fa-2x fa-fw"> </i>
+	                        <i class="fab fa-instagram fa-2x fa-fw"> </i>
+	                	</div>
+	                </div>
+         	<div class="col-12">
+                        <p class=" text-light text-center" style="font-size: 9pt;">acessibilidade</br>
+						<i class="fas fa-wheelchair fa-fw fa-lg"></i> <i class="fas fa-american-sign-language-interpreting fa-fw fa-lg"></i></p>
+         	</div>
+	            </div>
+	            </div>
+
+            		</div>
+        </div>
+        </div>
+	</footer>
+			<div class="footer-copyright py-3 text-center">
+        		© 2018 Copyright:
+				<a href="https://mdbootstrap.com/material-design-for-bootstrap/"> lojadaora@gmail.com </a>
+		</div>
 	</div>
 	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

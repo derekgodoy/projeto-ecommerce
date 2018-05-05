@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Maio-2018 às 02:20
+-- Generation Time: 05-Maio-2018 às 02:34
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -47,7 +47,7 @@ INSERT INTO `produtos` (`id`, `nome`, `marca`, `descricao`, `categoria`, `preco`
 (2, 'Moto G5S', 'Motorola', 'Smartphone Motorola Moto G 5S Dual Chip Android 7.1.1 Nougat Tela 5.2'' Snapdragon 430 32GB 4G Câmera 16MP - Platinum', 'Celulares', '877.00', 'produto2.png'),
 (3, 'iPhone 7 Plus', 'Apple', 'iPhone 7 Plus 32GB Ouro Rosa Tela Retina HD 5,5'' 3D Touch Câmera Dupla de 12MP - Apple', 'Celulares', '3147.00', 'produto3.png'),
 (4, 'Teclado Gamer BK-152C', 'Exbom', 'Teclado USB Gamer Semi Mecanico Iluminado Bk-152c', 'Informática', '43.00', 'produto4.png'),
-(5, 'Monitor LED 19.5''', 'LG', 'Monitor LED 19,5'' LG 20M37AA-B.AWZ', 'Informárica', '370.00', 'produto5.png'),
+(5, 'Monitor LED 19.5''', 'LG', 'Monitor LED 19,5'' LG 20M37AA-B.AWZ', 'Informática', '370.00', 'produto5.png'),
 (6, 'Mouse Wireless', 'Dell', 'Mouse Wireless WM126 Preto - Dell', 'Informática', '59.00', 'produto6.png'),
 (7, 'Smart TV 32''', 'Samsung', 'Smart TV LED 32'' Samsung 32J4300 HD com Conversor Digital 2 HDMI 1 USB Wi-Fi 120Hz', 'TVs, Áudio e Home Theaters', '1080.00', 'produto7.png'),
 (8, 'Home Theater HT-12', 'Mondial', 'Home Theater HT-12 Subwoofer, 5.1 Canais, USB, 75W RMS - Mondial', 'TVs, Áudio e Home Theaters', '249.00', 'produto8.png'),
@@ -63,7 +63,7 @@ INSERT INTO `produtos` (`id`, `nome`, `marca`, `descricao`, `categoria`, `preco`
 (18, 'Guarda Roupa Casal', 'Quarta Divisao Moveis', 'Guarda Roupa Casal Sevilha Mdp 3 Portas Correr 6 Gavetas Com Espelho Nevada', 'Móveis e Decoração', '1099.00', 'produto18.png'),
 (19, 'God of War', 'Playstation', 'Game God Of War - PS4', 'Games, Livros e Filmes', '199.00', 'produto19.png'),
 (20, 'Coleção Bluray Harry Potter', 'Warner', 'Coleção Completa Blu-ray Harry Potter: Anos 1-7B (8 Discos)', 'Games, Livros e Filmes', '149.90', 'produto20.png'),
-(21, 'As Crônicas de Gelo e Fogo - A Guerra dos Tronos', 'Leya', 'Livro - As Crônicas de Gelo e Fogo - A Guerra dos Tronos Livro Um [Edição Comemorativa]', 'Games, Livros e Filmes', '43.90', 'produto21.png');
+(22, 'As Crônicas de Gelo e Fogo - A Guerra dos Tronos', 'LeYa', 'Livro - As Crônicas de Gelo e Fogo - A Guerra dos Tronos Livro Um [Edição Comemorativa]', 'Games, Livros e Filmes', '43.90', 'produto21.png');
 
 -- --------------------------------------------------------
 

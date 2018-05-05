@@ -5,13 +5,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
-	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
 	<style type="text/css">
 		.img{
-			max-width: 400px;
+			max-width: 350px;
 			height: auto;
-			margin: 0 auto;
 		}
         .img2{
             max-width: 300px;
@@ -26,41 +24,11 @@
 	    		<img class="img-fluid" src="img/logo.png" style="width: 50%; height: auto">
 	    	</figure>
     	</div>
-  		<div class="col-md-4" style="margin-top: 6%; width: 100%">
-	      	<form class="form-inline text-center" action="#" >
-	        <input class="form-control font-italic pt-2 pb-2" type="search" placeholder="Busca..." aria-label="Search" style="width: 100%">
+  		<div class="col-md-4 pt-2 pb-2" style="margin-top: 6%; width: 100%">
+	      	<form class="form-inline text-center" >
+	        <input class="form-control font-italic" type="search" placeholder="Busca..." aria-label="Search" style="width: 100%">
       		</form>
   		</div>
- 		<div class="col-md-4 pb-2 pt-2 text-light" style="margin-top: 5%; text-align: center">
-   			<h5><a style="color: white" href="login.php" data-toggle="modal" data-target="#exampleModal">Login</a> </br>  </br> <a style="color: white" href="cadastro.php">Cadastre-se</a></h5>
-  		</div>
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">Bem-vindo, faça seu login</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-		        	<div class="col">
-					<form action="#" method="post">
-					  <div class="form-group">
-					    <label for="login">Login</label>
-					    <input type="text" class="form-control" id="login" name="login" aria-describedby="login" placeholder="Digite seu login">
-					  </div>
-					  <div class="form-group">
-					    <label for="senha">Senha</label>
-					    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
-					  </div>
-					  <button type="submit" class="btn btn-primary">Entrar</button>
-					</form>
-					</div>
-			      </div>
-			    </div>
-			  </div>
-			</div>
 		</div>
 
 	<div>
@@ -70,10 +38,10 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mx-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#"><i class="fas fa-home text-primary"></i> Página Inicial</a>
+				<li class="nav-item">
+					<a class="nav-link" href="index.php"><i class="fas fa-home text-primary"></i> Página Inicial</a>
 				</li>
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown active">
 			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-gift text-primary"></i> Produtos</a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			          <a class="dropdown-item" href="produtos.php?categoria=Celulares">Celulares <i class="fas fa-mobile-alt"></i></a>
@@ -95,26 +63,25 @@
 		</div>
 		</nav>
 	</div>
-		<div class="row justify-content-center" >
-		<figure class="figure justify-content-center">
-			<img class="img-fluid" src="img/banner.png">
-		</figure>
-		</div>
-
-		<div class="row bg-light justify-content-center">
-		<div class="bg-primary col-sm-4 col-6 rounded ">
-		<h3 class="col text-center text-light mt-3">Mais Vendidos</h3>
-		</div>
-		</div>
-
-
 <?php
 include "conexao.php";
-$stmt = $pdo->prepare('SELECT * FROM produtos order by id desc limit 6');
+
+$categoria=$_GET['categoria'];
+
+$stmt = $pdo->prepare('SELECT * FROM produtos where categoria= ?');
+$stmt->bindParam(1, $categoria, PDO::PARAM_STR);
 $stmt->execute();
 if ($alvos = $stmt->fetchAll()){
+
 ?>
-	<div class="row bg-light pt-4 text-center">
+		<div class="row bg-light justify-content-center">
+		<div class="bg-primary col-sm-4 col-5 rounded ">
+		<h3 class="col text-center text-light mt-3"><?php echo $categoria; ?></h3>
+		</div>
+		</div>
+
+
+<div class="row bg-light pt-4 text-center">
 		<figure class="figure col border">
 			<img class="img-fluid img2" src="<?php echo "img/".$alvos[0]['imagem'];?>">
             <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[0]['nome']?></u></h4></figcaption>
@@ -137,44 +104,11 @@ if ($alvos = $stmt->fetchAll()){
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 	</div>	
-	<div class="row bg-light pt-4 text-center">
-		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[3]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[3]['nome']?></u></h4></figcaption>
-            <h5><?php echo "Preço: R$ ".$alvos[3]['preco'];  ?></h5>
-            <p class="col text-primary mt-2"><?php echo $alvos[3]['descricao'];?></p>
-            <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
-		</figure>
-		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[4]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[4]['nome']?></u></h4></figcaption>
-            <h5><?php echo "Preço: R$ ".$alvos[4]['preco'];  ?></h5>
-            <p class="col text-primary mt-2"><?php echo $alvos[4]['descricao'];?></p>
-            <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
-		</figure>
-		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[5]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[5]['nome']?></u></h4></figcaption>
-            <h5><?php echo "Preço: R$ ".$alvos[5]['preco'];  ?></h5>
-            <p class="col text-primary mt-2"><?php echo $alvos[5]['descricao'];?></p>
-            <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
-		</figure>
-	</div>
-
 <?php
 }
 ?>
 
-
-
-
-
-
-
-
-
-
-        <footer class=" row bg-primary text-light">
+	<footer class=" row bg-primary text-light">
             <div class="container mt-5 mb-4 text-center text-md-left">
                 <div class="row mt-1">
                     <div class="col-md-4 col-lg-4 col-xl-4 text-center">
@@ -236,6 +170,7 @@ if ($alvos = $stmt->fetchAll()){
 				<a href="https://mdbootstrap.com/material-design-for-bootstrap/"> lojadaora@gmail.com </a>
 		</div>
 	</div>
+	
 	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
