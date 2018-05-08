@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Maio-2018 às 02:34
+-- Generation Time: 08-Maio-2018 às 02:34
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
   "senha" varchar(255) NOT NULL,
   "email" varchar(255) NOT NULL,
   "cpf" int(255) NOT NULL,
-  "endereço" varchar(255) NOT NULL,
+  "endereco" varchar(255) NOT NULL,
   "complemento" varchar(255) NOT NULL,
   "cep" int(11) NOT NULL,
   "bairro" varchar(255) NOT NULL,
@@ -92,8 +92,10 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `login`, `senha`, `email`, `cpf`, `endereço`, `complemento`, `cep`, `bairro`, `cidade`, `estado`, `tipo`) VALUES
-(1, 'vendedor', 'vendedor', 'YWRtaW4=', 'vendedor@gmail.com', 2147483647, 'rua 12', 'casa 1', 11111111, 'borel', 'rio de janeiro', 'RJ', 'vendedor');
+INSERT INTO `usuarios` (`id`, `nome`, `login`, `senha`, `email`, `cpf`, `endereco`, `complemento`, `cep`, `bairro`, `cidade`, `estado`, `tipo`) VALUES
+(1, 'vendedor', 'vendedor', 'YWRtaW4=', 'vendedor@gmail.com', 2147483647, 'rua 12', 'casa 1', 11111111, 'borel', 'rio de janeiro', 'RJ', 'vendedor'),
+(2, 'Derek', 'derek', '123', 'derek@gmail.com', 2147483647, 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario'),
+(4, 'sdafdsa', 'adfad', '12313', 'sadf@das', 123213213, 'asdasd', 'juhn', 123213, 'kjb', 'kjnbjknb', 'jk', 'usuario');
 
 --
 -- Indexes for dumped tables
