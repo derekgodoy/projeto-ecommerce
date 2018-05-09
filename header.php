@@ -4,6 +4,9 @@ session_start();
 if(isset($_GET['categoria'])) {
 	$link = 1;
 }
+if(isset($_GET['nome'])) {
+	$link = 1;
+}
 else {
 	$link = 2;
 }
@@ -52,11 +55,11 @@ else {
 					<form action="login.php" method="post">
 					  <div class="form-group">
 					    <label for="login">Login</label>
-					    <input type="text" class="form-control" id="login" name="login" aria-describedby="login" placeholder="Digite seu login">
+					    <input type="text" class="form-control" id="login" name="login" aria-describedby="login" placeholder="Digite seu login" required>
 					  </div>
 					  <div class="form-group">
 					    <label for="senha">Senha</label>
-					    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+					    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
 					  </div>
 					  <button type="submit" class="btn btn-primary">Entrar</button>
 					</form>

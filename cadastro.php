@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Loja Daora - Cadastro</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="img/logo.png">	
 	<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
 	<style type="text/css">
@@ -34,63 +35,62 @@
 						<div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="nome">Nome</label>
-					      <input type="text" class="form-control" id="nome" name="nome">
+					      <input type="text" class="form-control" id="nome" name="nome" required>
 					    </div>
 					    <div class="form-group col-md-6">
 					      <label for="email">Email</label>
-					      <input type="email" class="form-control" id="email" name="email">
+					      <input type="email" class="form-control" id="email" name="email" required>
 					    </div>
 					  </div>
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="login">Login</label>
-					      <input type="text" class="form-control" id="login" name="login">
+					      <input type="text" class="form-control" id="login" name="login" required>
 					    </div>
 					    <div class="form-group col-md-6">
 					      <label for="senha">Senha</label>
-					      <input type="password" class="form-control" id="senha" name="senha">
+					      <input type="password" class="form-control" id="senha" name="senha" required>
 					    </div>
 					  </div>					  
 					  <div class="form-row">
 					  <div class="form-group col-md-6">
 					    <label for="cpf">CPF</label>
-					    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00">
+					    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required maxlength="11">
 					  </div>
 					  <div class="form-group col-md-6">
 					    <label for="cep">CEP</label>
-					    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000">
+					    <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" required maxlength="8">
 					  </div>
 					  </div>
 					  <div class="form-row">
 					  <div class="form-group col-md-8">
 					    <label for="endereco">Endereço</label>
-					    <input type="text" class="form-control" id="endereco" name="endereco">
+					    <input type="text" class="form-control" id="endereco" name="endereco" required placeholder="Ex: Rua B, 143">
 					  </div>
 					  <div class="form-group col-md-4">
 					    <label for="complemento">Complemento</label>
-					    <input type="text" class="form-control" id="complemento" name="complemento">
+					    <input type="text" class="form-control" id="complemento" name="complemento" required placeholder="Ex: Apto 204">
 					  </div>
 					  </div>
 					  <div class="form-row">
 					  	<div class="form-group col-md-2">
 					      <label for="estado">Estado</label>
-					      <input type="text" class="form-control" id="estado" name="estado">
+					      <input type="text" class="form-control" id="estado" name="estado" required maxlength="2" placeholder="Ex: RJ">
 					    </div>
 					    <div class="form-group col-md-6">
 					      <label for="cidade">Cidade</label>
-					      <input type="text" class="form-control" id="cidade" name="cidade">
+					      <input type="text" class="form-control" id="cidade" name="cidade" required placeholder="Ex: Rio de Janeiro">
 					    </div>
 					    <div class="form-group col-md-4">
 					      <label for="bairro">Bairro</label>
-					      <input type="text" class="form-control" id="bairro" name="bairro">
+					      <input type="text" class="form-control" id="bairro" name="bairro" required placeholder="Ex: Copacabana">
 					    </div>
 					  </div>
 					  <input type="hidden" name="tipo" id="tipo" value="usuario">
-					  <button type="submit" class="btn btn-primary">Enviar</button>
+					  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
 					</form>
 					</div>
 					</div>
-
 
 <?php
 include "footer.html";

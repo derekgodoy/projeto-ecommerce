@@ -1,7 +1,20 @@
+<?php
+include "conexao.php";
+
+$categoria=$_GET['categoria'];
+
+$stmt = $pdo->prepare('SELECT * FROM produtos where categoria= ?');
+$stmt->bindParam(1, $categoria, PDO::PARAM_STR);
+$stmt->execute();
+if ($alvos = $stmt->fetchAll()){
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Loja Daora - <?php echo $categoria?></title>
+	 <link rel="icon" type="image/png" href="img/logo.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
@@ -23,17 +36,6 @@
   	include "header.php";
   	?>
 
-<?php
-include "conexao.php";
-
-$categoria=$_GET['categoria'];
-
-$stmt = $pdo->prepare('SELECT * FROM produtos where categoria= ?');
-$stmt->bindParam(1, $categoria, PDO::PARAM_STR);
-$stmt->execute();
-if ($alvos = $stmt->fetchAll()){
-
-?>
 		<div class="row bg-light justify-content-center">
 		<div class="bg-primary col-sm-4 col-5 rounded ">
 		<h3 class="col text-center text-light mt-3"><?php echo $categoria; ?></h3>
@@ -43,22 +45,22 @@ if ($alvos = $stmt->fetchAll()){
 
 <div class="row bg-light pt-4 text-center">
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[0]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[0]['nome']?></u></h4></figcaption>
+			<a href="item.php?nome=<?php echo $alvos[0]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[0]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[0]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[0]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[0]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[0]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[1]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[1]['nome']?></u></h4></figcaption>
+			 <a href="item.php?nome=<?php echo $alvos[1]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[1]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[1]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[1]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[1]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[1]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[2]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[2]['nome']?></u></h4></figcaption>
+			<a href="item.php?nome=<?php echo $alvos[2]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[2]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[2]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[2]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[2]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[2]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>

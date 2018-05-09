@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Loja Daora</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="style/bootstrap.css">
-	
+    <link rel="icon" type="image/png" href="img/logo.png">	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
 	<style type="text/css">
 		.img{
@@ -71,22 +71,22 @@ if ($alvos = $stmt->fetchAll()){
 ?>
 	<div class="row bg-light pt-4 text-center">
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[0]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[0]['nome']?></u></h4></figcaption>
+			<a href="item.php?nome=<?php echo $alvos[0]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[0]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[0]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[0]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[0]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[0]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[1]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[1]['nome']?></u></h4></figcaption>
+            <a href="item.php?nome=<?php echo $alvos[1]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[1]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[1]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[1]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[1]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[1]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[2]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[2]['nome']?></u></h4></figcaption>
+            <a href="item.php?nome=<?php echo $alvos[2]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[2]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[2]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[2]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[2]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[2]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
@@ -94,22 +94,22 @@ if ($alvos = $stmt->fetchAll()){
 	</div>	
 	<div class="row bg-light pt-4 text-center">
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[3]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[3]['nome']?></u></h4></figcaption>
+            <a href="item.php?nome=<?php echo $alvos[3]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[3]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[3]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[3]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[3]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[3]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[4]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[4]['nome']?></u></h4></figcaption>
+            <a href="item.php?nome=<?php echo $alvos[4]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[4]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[4]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[4]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[4]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[4]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
 		</figure>
 		<figure class="figure col border">
-			<img class="img-fluid img2" src="<?php echo "img/".$alvos[5]['imagem'];?>">
-            <figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[5]['nome']?></u></h4></figcaption>
+            <a href="item.php?nome=<?php echo $alvos[5]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[5]['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos[5]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[5]['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos[5]['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos[5]['descricao'];?></p>
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
