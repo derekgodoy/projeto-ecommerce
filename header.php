@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(isset($_GET['categoria'])) {
 	$link = 1;
 }
@@ -22,54 +21,25 @@ else {
 	    	</figure>
     	</div>
   		<div class="col-md-4" style="margin-top: 6%; width: 100%">
-	      	<form class="form-inline text-center" action="#" >
-	        <input class="form-control font-italic pt-2 pb-2" type="search" placeholder="Busca..." aria-label="Search" style="width: 100%">
-      		</form>
+	      	<form class="form-inline text-center" method="post" action="busca.php" >
+	        <input class="form-control font-italic pt-2 pb-2" type="search" placeholder="Busca..." aria-label="Search" id="busca" name="busca" style="width: 100%">
+      		</form> 
   		</div>
 
 
  		<div class="col-md-4 pb-2 pt-2 text-light" style="margin-top: 5%; text-align: center">
  			<?php if (isset($_SESSION['nome'])){ ?>
  				<h5 class="text-light mt-3">Olá, <?php echo $_SESSION['nome']?></h5>
- 				<h6><a class="text-light font-weight-bold" href="logout.php">Sair</a></h6>
+ 				<h6><a class="text-light font-weight-bold" data-toggle="modal" data-target="#modal2" href="logout.php">Sair</a></h6>
  			<?php
  			}
  			else{
  			?>
-   			<h5><a class="text-light" href="login.php" data-toggle="modal" data-target="#exampleModal">Login</a> </br>  </br> <a style="color: white" href="cadastro.php">Cadastre-se</a></h5>
+   			<h5><a class="text-light" href="login.php" data-toggle="modal" data-target="#modal1">Login</a> </br>  </br> <a style="color: white" href="cadastro.php">Cadastre-se</a></h5>
    			<?php }?>
   		</div>
-
-
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLabel">Bem-vindo de volta, faça seu login</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-		        	<div class="col">
-					<form action="login.php" method="post">
-					  <div class="form-group">
-					    <label for="login">Login</label>
-					    <input type="text" class="form-control" id="login" name="login" aria-describedby="login" placeholder="Digite seu login" required>
-					  </div>
-					  <div class="form-group">
-					    <label for="senha">Senha</label>
-					    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
-					  </div>
-					  <button type="submit" class="btn btn-primary">Entrar</button>
-					</form>
-					</div>
-			      </div>
-			    </div>
-			  </div>
-			</div>
 		</div>
-
+		<?php include "modal.php";?>
 	<div class="mb-2">
 		<nav class="navbar row navbar-expand-md navbar-light bg-light border font-weight-bold">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

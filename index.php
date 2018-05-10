@@ -68,6 +68,7 @@ include "conexao.php";
 $stmt = $pdo->prepare('SELECT * FROM produtos order by id desc limit 6');
 $stmt->execute();
 if ($alvos = $stmt->fetchAll()){
+        
 ?>
 	<div class="row bg-light pt-4 text-center">
 		<figure class="figure col border">
