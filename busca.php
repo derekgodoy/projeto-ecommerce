@@ -2,13 +2,12 @@
 include "conexao.php";
 
 $busca = $_POST['busca'];
+$stmt = "SELECT * FROM produtos WHERE nome or categoria LIKE '%" . $busca . "%'";
+$stmt = $pdo->query( $stmt ) ;
 
-$stmt = $pdo->prepare('SELECT * FROM produtos WHERE nome = ? LIKE ?');
-$stmt->bindParam(1, $busca, PDO::PARAM_STR);
-$stmt->bindValue(2, "%$busca%", PDO::PARAM_STR);
-$stmt->execute();
-if ($alvos = $stmt->fetchAll()){ ?>
-	
+if ($result = $stmt->fetchAll())  {
+    ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +32,7 @@ if ($alvos = $stmt->fetchAll()){ ?>
 		
   	<?php
   	include "header.php";
-  	?>
+?>
 
 		<div class="row bg-light justify-content-center">
 		<div class="bg-primary col-sm-4 col-5 rounded ">
@@ -42,30 +41,24 @@ if ($alvos = $stmt->fetchAll()){ ?>
 		</div>
 
 
-<div class="row bg-light pt-4 text-center">
-		<figure class="figure col border">
-			<a href="item.php?nome=<?php echo $alvos[0]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[0]['imagem'];?>"></a>
-            <a class="text-dark"href="item.php?nome=<?php echo $alvos[0]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[0]['nome']?></u></h4></figcaption></a>
-            <h5><?php echo "Preço: R$ ".$alvos[0]['preco'];  ?></h5>
-            <p class="col text-primary mt-2"><?php echo $alvos[0]['descricao'];?></p>
+<div class="row bg-light pt-4 justify-content-center text-center">
+<?php
+foreach ($result as $alvos) {
+  	?>
+		<figure class="figure col-4 border">
+			<a href="item.php?nome=<?php echo $alvos['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos['imagem'];?>"></a>
+            <a class="text-dark"href="item.php?nome=<?php echo $alvos['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos['nome']?></u></h4></figcaption></a>
+            <h5><?php echo "Preço: R$ ".$alvos['preco'];  ?></h5>
+            <p class="col text-primary mt-2"><?php echo $alvos['descricao'];?></p>
+            <form method="post" action="carrinho.php">
+            <input type="hidden" name="id" value="<?php echo $alvos['id'];?>">
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+            </form>
 		</figure>
-		<figure class="figure col border">
-			 <a href="item.php?nome=<?php echo $alvos[1]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[1]['imagem'];?>"></a>
-            <a class="text-dark"href="item.php?nome=<?php echo $alvos[1]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[1]['nome']?></u></h4></figcaption></a>
-            <h5><?php echo "Preço: R$ ".$alvos[1]['preco'];  ?></h5>
-            <p class="col text-primary mt-2"><?php echo $alvos[1]['descricao'];?></p>
-            <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
-		</figure>
-		<figure class="figure col border">
-			<a href="item.php?nome=<?php echo $alvos[2]['nome']?>"><img class="img-fluid img2" src="<?php echo "img/".$alvos[2]['imagem'];?>"></a>
-            <a class="text-dark"href="item.php?nome=<?php echo $alvos[2]['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos[2]['nome']?></u></h4></figcaption></a>
-            <h5><?php echo "Preço: R$ ".$alvos[2]['preco'];  ?></h5>
-            <p class="col text-primary mt-2"><?php echo $alvos[2]['descricao'];?></p>
-            <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
-		</figure>
+<?php
+}
+?>
 	</div>	
-
 
 <?php
 include "footer.html";
