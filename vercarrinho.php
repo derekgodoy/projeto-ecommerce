@@ -33,24 +33,29 @@
 	  	if(isset($_SESSION["carrinho"])){
     $item_total = 0;
 ?>	
-<div class="row justify-content-center mb-2">
-	<div class="col-7">
-<table cellpadding="10" cellspacing="1" class="border text-center">
+		<div class="row bg-light justify-content-center">
+		<div class="bg-primary col-sm-4 col-10 rounded ">
+		<h3 class="col text-center text-light mt-3">Carrinho</h3>
+		</div>
+		</div>
+<div class="row justify-content-center mt-2 mb-2">
+	<div class="col-8">
+<table cellpadding="8" cellspacing="1" class="border text-center">
 <tbody>
 <tr>
-<th class="border text-center" style="text-align:left;"><strong>Foto</strong></th>
-<th class="border text-center" style="text-align:left;"><strong>Nome</strong></th>
-<th class="border text-center" style="text-align:right;"><strong>Descrição</strong></th>
-<th class="border text-center" style="text-align:center;"><strong>Preço</strong></th>
+<th class="border text-center"><strong>Foto</strong></th>
+<th class="border text-center"><strong>Nome</strong></th>
+<th class="border text-center"><strong>Descrição</strong></th>
+<th class="border text-center"><strong>Preço</strong></th>
 </tr>	
 <?php		
     foreach ($_SESSION["carrinho"] as $item){
 		?>
 				<tr>
-				<td class="border text-center" style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><img class="img3" src="<?php echo "img/".$item['imagem'];?>"></strong></td>
-				<td class="border text-center" style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["nome"]; ?></td>
-				<td class="border text-center" style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["descricao"]; ?></td>
-				<td class="border text-center" style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "R$ ". $item["preco"]; ?></td>
+				<td class="border text-center"><img class="img3" src="<?php echo "img/".$item['imagem'];?>"></td>
+				<td class="border text-center"><?php echo $item["nome"]; ?></td>
+				<td class="border text-center"><?php echo $item["descricao"]; ?></td>
+				<td class="border text-center"><?php echo "R$ ". $item["preco"]; ?></td>
 				</tr>
 				<?php
         $item_total += ($item["preco"]);
@@ -61,7 +66,10 @@
 <td colspan="4" align=right><strong>Total:</strong> <?php echo "R$ ".number_format((float)$item_total, 2, '.', ''); ?></td>
 </tr>
 <tr>
-<td colspan="4" align=right><strong><a href="vercarrinho.php?acao=vazio">Esvaziar Carrinho</a></strong></td>
+<td colspan="4" align=right><form class="align-middle" method="post" action="#">
+            <button type="submit" class="btn btn-danger">Esvaziar Carrinho</button>
+            <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+            </form></td>
 </tr>
 </tbody>
 </table>		
