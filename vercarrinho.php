@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +17,8 @@
             max-width: 300px;
         }
         .img3{
-            max-width: 100px;
+            max-width:50%;
+            height: auto;
         }
 	</style>
 </head>
@@ -39,43 +37,65 @@
 		</div>
 		</div>
 <div class="row justify-content-center mt-2 mb-2">
-	<div class="col-8">
-<table cellpadding="8" cellspacing="1" class="border text-center">
-<tbody>
+	<div class="table-responsive col-10">
+<table cellpadding="8" cellspacing="1" class=" table" style="table-layout: fixed; width: 100%">
+<thead>
 <tr>
-<th class="border text-center"><strong>Foto</strong></th>
-<th class="border text-center"><strong>Nome</strong></th>
-<th class="border text-center"><strong>Descrição</strong></th>
-<th class="border text-center"><strong>Preço</strong></th>
+<th class="text-center"><strong>Foto</strong></th>
+<th class="text-center"><strong>Nome</strong></th>
+<th class="text-center"><strong>Descrição</strong></th>
+<th class="text-center"><strong>Preço</strong></th>
 </tr>	
+</thead>
 <?php		
     foreach ($_SESSION["carrinho"] as $item){
 		?>
+				<tbody>
 				<tr>
-				<td class="border text-center"><img class="img3" src="<?php echo "img/".$item['imagem'];?>"></td>
-				<td class="border text-center"><?php echo $item["nome"]; ?></td>
-				<td class="border text-center"><?php echo $item["descricao"]; ?></td>
-				<td class="border text-center"><?php echo "R$ ". $item["preco"]; ?></td>
+				<td class="text-center align-middle"> <figure class="figure"><img class="img3" src="<?php echo "img/".$item['imagem'];?>"></figure></td>
+				<td class="text-center align-middle"><?php echo $item["nome"]; ?></td>
+				<td class="text-center align-middle"><?php echo $item["descricao"]; ?></td>
+				<td class="text-center align-middle"><?php echo "R$ ". $item["preco"]; ?></td>
 				</tr>
 				<?php
         $item_total += ($item["preco"]);
 		}
 		?>
 
-<tr class="border">
-<td colspan="4" align=right><strong>Total:</strong> <?php echo "R$ ".number_format((float)$item_total, 2, '.', ''); ?></td>
+<tr>
+<td colspan="1" align=right><strong></td>
+<td colspan="1" align=right><strong></td>
+<td colspan="1" align=right><strong></td>
+<td class="text-center" colspan="1" align=right><strong>Total:</strong> <?php echo "R$ ".number_format((float)$item_total, 2, '.', ''); ?></td>
 </tr>
 <tr>
-<td colspan="4" align=right><form class="align-middle" method="post" action="#">
-            <button type="submit" class="btn btn-danger">Esvaziar Carrinho</button>
-            <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+<td colspan="1" align=right><strong></td>
+<td colspan="1" align=right><strong></td>
+<td colspan="1" align=right><strong></td>
+<td class="text-center" colspan="1" align=right><form class="align-middle" method="get" action="#">
+            <a href="acaocarrinho.php?acao=esvaziar" class="btn btn-danger">Esvaziar Carrinho</a>
+            <a href="acaocarrinho.php?acao=finalizar" class="btn btn-primary text-light">Finalizar Compra</a>
             </form></td>
 </tr>
 </tbody>
 </table>		
   <?php
-}
+} else{
 ?>
+<div class="row bg-light justify-content-center">
+		<div class="bg-primary col-sm-4 col-10 rounded ">
+		<h3 class="col text-center text-light mt-3">Carrinho</h3>
+		</div>
+		</div>
+		<div class="jumbotron text-center">
+			
+			<h3>Ops, seu carrinho ainda está vazio <br><br> Clique <a  class="text-dark" href="index.php">aqui</a> para comprar uns bagulho.</h3>
+
+		</div>
+<?php } ?>
+
+
+
 </div>
 </div>
 </div>

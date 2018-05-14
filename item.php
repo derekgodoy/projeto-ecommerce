@@ -54,7 +54,7 @@ if ($alvos = $stmt->fetchAll()){
 	        <h5><?php echo "Preço: R$ ".$alvos[0]['preco'];  ?></h5>
 	        <p class="col text-primary mt-2"><?php echo $alvos[0]['descricao'];?></p>
 	        <form method="post" action="carrinho.php">
-            <input type="hidden" name="id" value="<?php echo $alvos['id'];?>">
+            <input type="hidden" name="id" value="<?php echo $alvos[0]['id'];?>">
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
             </form>
 		</div>	

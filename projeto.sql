@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Maio-2018 às 02:21
+-- Generation Time: 15-Maio-2018 às 01:17
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -94,7 +94,8 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 
 INSERT INTO `usuarios` (`id`, `nome`, `login`, `senha`, `email`, `cpf`, `endereco`, `complemento`, `cep`, `bairro`, `cidade`, `estado`, `tipo`) VALUES
 (1, 'vendedor', 'vendedor', 'YWRtaW4=', 'vendedor@gmail.com', '2147483647', 'rua 12', 'casa 1', 11111111, 'borel', 'rio de janeiro', 'RJ', 'vendedor'),
-(2, 'Derek', 'derek', 'MTIz', 'derek@gmail.com', '2147483647', 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario');
+(2, 'Derek', 'derek', 'MTIz', 'derek@gmail.com', '2147483647', 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario'),
+(4, 'cu8safd', 'asdh', 'YXNramRobg==', 'oasjdn@gamsd', '23123123123', 'jkasdnfjkasdn', 'lkasdnlkasn', 12312312, 'DSLKFMA', 'nmdklaNLKDNASNF', 'lq', 'usuario');
 
 --
 -- Indexes for dumped tables

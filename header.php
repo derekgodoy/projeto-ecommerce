@@ -5,11 +5,21 @@ if(isset($_GET['categoria'])) {
 }else{
 if(isset($_GET['nome'])) {
 	$link = 1;
-}
-else {
+}else{
+if(isset($_POST['busca'])) {
+	$link = 1;
+}else{
+if (isset($_GET['carrinho'])) {
+	$link = 1;
+}else {
 	$link = 2;
 }
 }
+}
+}
+
+
+
 
 ?>
 
@@ -31,7 +41,7 @@ else {
  		<div class="col-md-4 pb-2 pt-2 text-light" style="margin-top: 4%; text-align: center">
  			<?php if (isset($_SESSION['nome'])){ ?>
  				<h4 class="text-light mt-3">Olá, <?php echo $_SESSION['nome']?></h4>
- 				<h5><a class="text-warning font-weight-bold" href="vercarrinho.php"><i class="fas fa-shopping-cart"></i> Carrinho</a></h5>
+ 				<h5><a class="text-warning font-weight-bold" href="vercarrinho.php?carrinho=1"><i class="fas fa-shopping-cart"></i> Carrinho (<?php if(isset($_SESSION['carrinho'])){ echo count($_SESSION['carrinho']);} else{echo "0";} ?>)</a></h5>
  				<h6><a class="text-light font-weight-bold" data-toggle="modal" data-target="#modal2" href="logout.php">Sair</a></h6>
  			<?php
  			}
