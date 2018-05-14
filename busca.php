@@ -2,7 +2,7 @@
 include "conexao.php";
 
 $busca = $_POST['busca'];
-$stmt = "SELECT * FROM produtos WHERE nome  LIKE '%" . $busca . "%'";
+$stmt = "SELECT * FROM produtos WHERE nome or categoria LIKE '%" . $busca . "%'";
 $stmt = $pdo->query( $stmt ) ;
 
 if ($result = $stmt->fetchAll())  {
