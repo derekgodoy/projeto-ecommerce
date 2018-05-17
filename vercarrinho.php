@@ -59,6 +59,7 @@
 				</tr>
 				<?php
         $item_total += ($item["preco"]);
+        $item_juros = ($item_total*1.1);
 		}
 		?>
 
@@ -72,11 +73,42 @@
 <td colspan="1" align=right><strong></td>
 <td colspan="1" align=right><strong></td>
 <td colspan="1" align=right><strong></td>
-<td class="text-center" colspan="1" align=right><form class="align-middle" method="get" action="#">
-            <a href="acaocarrinho.php?acao=esvaziar" class="btn btn-danger">Esvaziar Carrinho</a>
-            <a href="acaocarrinho.php?acao=finalizar" class="btn btn-primary text-light">Finalizar Compra</a>
+<td class="text-center" colspan="1" align=right>
+				<div class="row justify-content-center">
+				<div class="col-8">
+					 <form class="align-middle" method="post" action="finalizar.php">
+				<select class="custom-select" name="parcelas" id="parcelas">
+				  <option value="#" selected disabled>Selecione o parcelmento:</option>
+				  <option value="1">1x de <?php echo number_format((float)$item_total, 2, '.', '');?> (à vista)</option>
+				  <option value="2">2x de <?php echo number_format((float)$item_total/2, 2, '.', '');?> (sem juros)</option>
+				  <option value="3">3x de <?php echo number_format((float)$item_total/3, 2, '.', '');?> (sem juros)</option>
+				  <option value="4">4x de <?php echo number_format((float)$item_total/4, 2, '.', '');?> (sem juros)</option>
+				  <option value="5">5x de <?php echo number_format((float)$item_total/5, 2, '.', '');?> (sem juros)</option>
+				  <option value="6">6x de <?php echo number_format((float)$item_total/6, 2, '.', '');?> (sem juros)</option>
+				  <option value="7">7x de <?php echo number_format((float)$item_total/7, 2, '.', '');?> (sem juros)</option>
+				  <option value="8">8x de <?php echo number_format((float)$item_total/8, 2, '.', '');?> (sem juros)</option>
+				  <option value="9">9x de <?php echo number_format((float)$item_total/9, 2, '.', '');?> (sem juros)</option>
+				  <option value="10">10x de <?php echo number_format((float)$item_total/10, 2, '.', '');?> (sem juros)</option>
+				  <option value="11">11x de <?php echo number_format((float)$item_juros/11, 2, '.', '');?> (10% de juros)</option>
+				  <option value="12">12x de <?php echo number_format((float)$item_juros/12, 2, '.', '');?> (10% de juros)</option>
+				</select>
+				<input type="hidden" name="item_total" value="<?php echo $item_total;?>">
+				<input type="hidden" name="item_juros" value="<?php echo $item_juros;?>">
+  					</div>
+  					</div>
+           </td>
+</tr>
+
+<tr>
+<td colspan="1" align=right><strong></td>
+<td colspan="1" align=right><strong></td>
+<td colspan="1" align=right><strong></td>
+<td class="text-center" colspan="1" align=right>
+            <a href="acaocarrinho.php?acao=esvaziar" class="btn btn-danger mb-2">Esvaziar Carrinho</a>
+            <button type="submit" class="btn btn-primary mb-2 text-light">Finalizar Compra</button>
             </form></td>
 </tr>
+
 </tbody>
 </table>		
   <?php

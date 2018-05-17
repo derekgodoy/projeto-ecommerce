@@ -12,6 +12,7 @@ $senha=base64_encode($senha);
 $stmt->execute();
 if ($alvos = $stmt->fetchAll()){
 	$_SESSION['nome'] = $alvos[0]['nome'];
+	$_SESSION['id_cliente'] = $alvos[0]['id'];
 	header("location: {$_SERVER['HTTP_REFERER']}");
 	exit;
 }

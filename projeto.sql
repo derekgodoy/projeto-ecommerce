@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Maio-2018 às 01:17
+-- Generation Time: 17-Maio-2018 às 02:15
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `projeto` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE projeto;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidos`
+--
+
+DROP TABLE IF EXISTS `pedidos`;
+CREATE TABLE IF NOT EXISTS "pedidos" (
+"id" int(11) NOT NULL,
+  "id_cliente" int(11) NOT NULL,
+  "id_produtos" text CHARACTER SET utf8 NOT NULL,
+  "preco" int(11) NOT NULL,
+  "parcelas" int(11) NOT NULL,
+  "status" varchar(255) CHARACTER SET utf8 NOT NULL,
+  "data" date NOT NULL
+);
 
 -- --------------------------------------------------------
 
@@ -94,12 +111,17 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 
 INSERT INTO `usuarios` (`id`, `nome`, `login`, `senha`, `email`, `cpf`, `endereco`, `complemento`, `cep`, `bairro`, `cidade`, `estado`, `tipo`) VALUES
 (1, 'vendedor', 'vendedor', 'YWRtaW4=', 'vendedor@gmail.com', '2147483647', 'rua 12', 'casa 1', 11111111, 'borel', 'rio de janeiro', 'RJ', 'vendedor'),
-(2, 'Derek', 'derek', 'MTIz', 'derek@gmail.com', '2147483647', 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario'),
-(4, 'cu8safd', 'asdh', 'YXNramRobg==', 'oasjdn@gamsd', '23123123123', 'jkasdnfjkasdn', 'lkasdnlkasn', 12312312, 'DSLKFMA', 'nmdklaNLKDNASNF', 'lq', 'usuario');
+(2, 'Derek', 'derek', 'MTIz', 'derek@gmail.com', '2147483647', 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `pedidos`
+--
+ALTER TABLE `pedidos`
+ ADD PRIMARY KEY ("id");
 
 --
 -- Indexes for table `produtos`
@@ -117,6 +139,11 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `pedidos`
+--
+ALTER TABLE `pedidos`
+MODIFY "id" int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `produtos`
 --
