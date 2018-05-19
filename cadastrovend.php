@@ -1,3 +1,10 @@
+<?php
+error_reporting(0);
+include "conexao.php";
+session_start();
+if ($_SESSION['tipo']=="vendedor"){
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +32,11 @@
 	?>
 
 		<div class="row bg-light justify-content-center">
+		<div class="bg-primary col-sm-4 col-5 rounded mr-2">
+		<h3 class="col text-center text-light mt-3"><a href="cadastrovend.php" class=" text-light"><u>Cadastro do Vendedor</u></a></h3>
+		</div>
 		<div class="bg-primary col-sm-4 col-5 rounded ">
-		<h3 class="col text-center text-light mt-3">Cadastro do Vendedor</h3>
+		<h3 class="col text-center text-light mt-3"><a href="cadastroprod.php" class="text-light">Cadastro de Produtos</a></h3>
 		</div>
 		</div>
 						<div class="row mt-3 justify-content-center">
@@ -91,7 +101,6 @@
 					</form>
 					</div>
 					</div>
-
 <?php
 include "footer.html";
 ?>
@@ -102,3 +111,8 @@ include "footer.html";
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+}
+else{
+	header("location: errousuario.php");
+}

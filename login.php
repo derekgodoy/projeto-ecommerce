@@ -13,6 +13,7 @@ $stmt->execute();
 if ($alvos = $stmt->fetchAll()){
 	$_SESSION['nome'] = $alvos[0]['nome'];
 	$_SESSION['id_cliente'] = $alvos[0]['id'];
+	$_SESSION['tipo'] = $alvos[0]['tipo'];
 	header("location: {$_SERVER['HTTP_REFERER']}");
 	exit;
 }
