@@ -51,7 +51,11 @@ foreach ($result as $alvos) {
             <a class="text-dark"href="item.php?nome=<?php echo $alvos['nome']?>"><figcaption class="col mt-2 p-0 text-center"><h4><u><?php echo $alvos['nome']?></u></h4></figcaption></a>
             <h5><?php echo "Preço: R$ ".$alvos['preco'];  ?></h5>
             <p class="col text-primary mt-2"><?php echo $alvos['descricao'];?></p>
+            <form method="post" action="carrinho.php">
+            <input type="hidden" name="id" value="<?php echo $alvos['id'];?>">
             <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-shopping-cart"></i> Adicionar</button>
+            </form>
+
 		</figure>
 <?php
 }

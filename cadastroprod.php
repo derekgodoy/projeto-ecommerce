@@ -97,6 +97,7 @@ if ($_SESSION['tipo']=="vendedor"){
 					  	
 					  </div>
 					  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+					  <a href="vendedor.php" class="btn btn-primary mt-3 float-right">Voltar ao Menu</a>
 					</form>
 					</div>
 					</div>

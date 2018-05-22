@@ -7,7 +7,7 @@ $id_cliente = $_SESSION['id_cliente'];
 $id_produtos=[]; 
 $preco ="";
 $parcelas = $_POST['parcelas'];
-$status="realizado";
+$status="Em Processamento";
 $data=date("Y/m/d");
 
 foreach ($_SESSION['carrinho'] as $produto) {array_push($id_produtos,$produto['id']);}

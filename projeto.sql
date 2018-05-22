@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Maio-2018 às 02:15
+-- Generation Time: 22-Maio-2018 às 02:15
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -37,6 +37,14 @@ CREATE TABLE IF NOT EXISTS "pedidos" (
   "status" varchar(255) CHARACTER SET utf8 NOT NULL,
   "data" date NOT NULL
 );
+
+--
+-- Extraindo dados da tabela `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `id_cliente`, `id_produtos`, `preco`, `parcelas`, `status`, `data`) VALUES
+(2, 2, '20', 150, 6, 'realizado', '2018-05-21'),
+(3, 2, '20 3 12', 500, 2, 'Em Processamento', '2018-05-21');
 
 -- --------------------------------------------------------
 
@@ -78,9 +86,9 @@ INSERT INTO `produtos` (`id`, `nome`, `marca`, `descricao`, `categoria`, `preco`
 (16, 'Mesa Olímpia', 'Leifer', 'Mesa Olímpia New 1,60x0,80m Canela - Leifer', 'Móveis e Decoração', '424.99', 'produto16.png'),
 (17, 'Armário p/ Cozinha', 'Poquema', 'Armário P/ Cozinha 8 Portas 2 Gavetas - Poquema Kit Manu 8p - Branco/Preto', 'Móveis e Decoração', '219.00', 'produto17.png'),
 (18, 'Guarda Roupa Casal', 'Quarta Divisao Moveis', 'Guarda Roupa Casal Sevilha Mdp 3 Portas Correr 6 Gavetas Com Espelho Nevada', 'Móveis e Decoração', '1099.00', 'produto18.png'),
-(19, 'God of War', 'Playstation', 'Game God Of War - PS4', 'Games, Livros e Filmes', '199.00', 'produto19.png'),
-(20, 'Coleção Bluray Harry Potter', 'Warner', 'Coleção Completa Blu-ray Harry Potter: Anos 1-7B (8 Discos)', 'Games, Livros e Filmes', '149.90', 'produto20.png'),
-(22, 'As Crônicas de Gelo e Fogo - A Guerra dos Tronos', 'LeYa', 'Livro - As Crônicas de Gelo e Fogo - A Guerra dos Tronos Livro Um [Edição Comemorativa]', 'Games, Livros e Filmes', '43.90', 'produto21.png');
+(29, 'God Of War', 'Playstation', 'Game God Of War - PS4', 'Games, Livros e Filmes', '199.00', 'produto19.png'),
+(30, 'Coleção Blu-ray Harry Potter: Anos 1-7B', 'Warner', 'Coleção Completa Blu-ray Harry Potter: Anos 1-7B (8 Discos)', 'Games, Livros e Filmes', '149.00', 'produto20.png'),
+(33, 'As Crônicas de Gelo e Fogo - A Guerra dos Tronos ', 'LeYa', 'Livro - As Crônicas de Gelo e Fogo - A Guerra dos Tronos Livro Um [Edição Comemorativa]', 'Games, Livros e Filmes', '34.00', 'produto21.png');
 
 -- --------------------------------------------------------
 
