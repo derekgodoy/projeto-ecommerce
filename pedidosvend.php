@@ -93,34 +93,6 @@ if ($result = $stmt->fetchAll()){
 	<?php	include "footer.html" ;	?>
 
 
-<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Confirmar exclusão</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row justify-content-center">
-                    <h5 class="mb-3">Deseja excluir este produto?</h5>
-                </div>
-                <div class="row justify-content-center">
-                    <h6 class="mb-3"><?php echo $item['nome'];?></h6>
-                </div>
-                <div class="row justify-content-center text-center">
-                    <figure class="figure"><img class="img3" src="<?php echo "img/".$item['imagem'];?>"></figure>
-                </div>
-                 
-
-                <div class="row justify-content-center mt-2">
-                     <form action="excluirprod.php" method="post"><input type="hidden" value="<?php echo $item['id']?>" name="id"><button type="" class="btn btn-danger mb-2" data-toggle="modal" data-target="#modal2" >Excluir</button> </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 	</div>
 	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
