@@ -1,30 +1,15 @@
 <?php
 include "conexao.php" ;
 ?>
-
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row justify-content-center">
-                	<h5 class="mb-3">Olá, <?php echo $_SESSION['nome']?>. Deseja mesmo encerrar a sessão?</h5>
-                </div>
-                <div class="row justify-content-center">
-                    <form action="logout.php" method="post" class="mx-auto">
-                        <button type="submit" class="btn btn-primary mt-2">Confirmar</button>
-                    </form>
+        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content text-center">
+                    <div class="modal-header text-dark"><h5 class="col"> Logout <i class="fa fa-lock"></i></div>
+                    <div class="modal-body text-dark"><h6 class="mb-3">Olá, <?php echo $_SESSION['nome']?>. Deseja mesmo encerrar a sessão?</h6></div>
+                    <div class="modal-footer justify-content-center"><a class="btn-sm btn-primary" href="logout.php">Confirmar</a></div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
 
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

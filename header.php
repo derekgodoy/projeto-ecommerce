@@ -42,7 +42,7 @@ if (isset($_GET['carrinho'])) {
  			<?php if (isset($_SESSION['nome'])){ ?>
  				<h4 class="text-light mt-3">Olá, <?php echo $_SESSION['nome']?></h4>
  			<?php if ($_SESSION['tipo']=="usuario") {?>
- 				<h5><a class="text-light font-weight-bold mb" href="pedido.php"><i class="fas fa-user"></i> Conta</a></h5>
+ 				<h5><a class="text-light font-weight-bold mb" href="pedido.php"><i class="fas fa-user"></i> Meus Pedidos</a></h5>
  				<h5><a class="text-warning font-weight-bold" href="vercarrinho.php?carrinho=1"><i class="fas fa-shopping-cart"></i> Carrinho (<?php if(isset($_SESSION['carrinho'])){ echo count($_SESSION['carrinho']);} else{echo "0";} ?>)</a></h5> 
  			<?php } if ($_SESSION['tipo']=="vendedor") {?>
  				<h5><a class="text-light font-weight-bold mb" href="vendedor.php"><i class="fas fa-user"></i> Menu do vendedor</a></h5>

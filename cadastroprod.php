@@ -43,7 +43,7 @@ if ($_SESSION['tipo']=="vendedor"){
 		</div>
 						<div class="row mt-3 justify-content-center">
 						<div class=" jumbotron col-8">
-							<form action="cadastrarprod.php" method="post">
+							<form action="cadastrarprod.php" method="post" enctype="multipart/form-data">
 						<div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="nome">Nome</label>
@@ -82,10 +82,7 @@ if ($_SESSION['tipo']=="vendedor"){
 					    <div class="input-group form-group mb-3">
 					      <label for="img">Imagem</label>
 							<div class="input-group mb-3">
-							  <div class="input-group-prepend">
-							    <span class="input-group-text" id="basic-addon3">img/</span>
-							  </div>
-							  <input type="text" class="form-control" id="img" name="img" placeholder="produtoX.png">
+							  <input type="file" name="fileToUpload" id="fileToUpload">
 							</div>
 					  </div>
 					  </div>
@@ -94,11 +91,14 @@ if ($_SESSION['tipo']=="vendedor"){
 							<div class="input-group mb-3">
 							  <textarea class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição do produto"></textarea>
 							</div>
+							
+    				
 					  	
 					  </div>
 					  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
 					  <a href="vendedor.php" class="btn btn-primary mt-3 float-right">Voltar ao Menu</a>
-					</form>
+					</form> <br>
+
 					</div>
 					</div>
 						  

@@ -8,6 +8,11 @@ $categoria = $_POST['categoria'];
 $preco = $_POST['preco'];
 $imagem = $_POST['img'];
 
+$dipasta = "img/";
+$arqdestino = $dipasta . basename($_FILES["fileToUpload"]["name"]);
+move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $arqdestino);
+
+
 $stmt = $pdo->prepare('INSERT INTO produtos (id,nome,marca,descricao,categoria,preco,imagem) VALUES (?, ?, ?, ?, ?, ?, ?)');
 
 $stmt->bindParam(1, $id, PDO::PARAM_INT);

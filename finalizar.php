@@ -1,7 +1,7 @@
 <?php
 include "conexao.php";
 session_start();
-
+unset($_SESSION['carrinho']);
 $id = "";
 $id_cliente = $_SESSION['id_cliente'];
 $nome_cliente = $_SESSION['nome'];

@@ -1,4 +1,4 @@
-<?php header("refresh:5; url=index.php");?>
+<?php header("refreshl=index.php");?>
 <!DOCTYPE html>
 <html>
 <head>
