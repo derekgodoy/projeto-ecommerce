@@ -1,6 +1,6 @@
 <?php
 $db_name = 'derekluan';
-$hostname = 'mysql427.umbler.com:41890';
+$hostname = 'mysql427.umbler.com';
 $username = 'derekluan';
 $password = 'derekluan123';
 $opcoes = array(
