@@ -1,4 +1,5 @@
-<?php header("refreshl=index.php");?>
+<?php header("refreshl=index.php");
+include "conexao.php";?>
 <!DOCTYPE html>
 <html>
 <head>
