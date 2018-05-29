@@ -10,7 +10,7 @@ $nome_produtos=[];
 $preco ="";
 $parcelas = $_POST['parcelas'];
 $status="Em Processamento";
-$data=0;
+$data= getdate();
 
 foreach ($_SESSION['carrinho'] as $produto) {
 	array_push($id_produtos,$produto['id']);

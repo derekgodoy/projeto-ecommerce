@@ -121,7 +121,7 @@
 		</div>
 		<div class="jumbotron text-center">
 			
-			<h3>Ops, seu carrinho ainda está vazio <br><br> Clique <a  class="text-dark" href="index.php">aqui</a> para comprar uns bagulho.</h3>
+			<h3>Ops, seu carrinho ainda está vazio <br><br> Clique <a  class="text-dark" href="index.php">aqui</a> para começar a comprar.</h3>
 
 		</div>
 <?php } ?>

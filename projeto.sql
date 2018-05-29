@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Maio-2018 às 02:15
+-- Generation Time: 30-Maio-2018 às 00:14
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -18,8 +18,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `projeto`
 --
-CREATE DATABASE IF NOT EXISTS `projeto` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE projeto;
+CREATE DATABASE IF NOT EXISTS `derekluan` DEFAULT CHARACTER SET utf32 COLLATE utf32_general_ci;
+USE derekluan;
 
 -- --------------------------------------------------------
 
@@ -31,7 +31,9 @@ DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE IF NOT EXISTS "pedidos" (
 "id" int(11) NOT NULL,
   "id_cliente" int(11) NOT NULL,
+  "nome_cliente" varchar(255) NOT NULL,
   "id_produtos" text CHARACTER SET utf8 NOT NULL,
+  "nome_produtos" text NOT NULL,
   "preco" int(11) NOT NULL,
   "parcelas" int(11) NOT NULL,
   "status" varchar(255) CHARACTER SET utf8 NOT NULL,
@@ -42,9 +44,14 @@ CREATE TABLE IF NOT EXISTS "pedidos" (
 -- Extraindo dados da tabela `pedidos`
 --
 
-INSERT INTO `pedidos` (`id`, `id_cliente`, `id_produtos`, `preco`, `parcelas`, `status`, `data`) VALUES
-(2, 2, '20', 150, 6, 'realizado', '2018-05-21'),
-(3, 2, '20 3 12', 500, 2, 'Em Processamento', '2018-05-21');
+INSERT INTO `pedidos` (`id`, `id_cliente`, `nome_cliente`, `id_produtos`, `nome_produtos`, `preco`, `parcelas`, `status`, `data`) VALUES
+(2, 2, 'Derek', '7, 8, 9', 'Smart TV 32'', Home Theater HT-12, Caixa de Som JBL', 1708, 2, 'Nota emitida', '2018-05-24'),
+(3, 2, 'Derek', '14, 15', 'Liquidificador Smart Gourmet, Torradeira Smart', 3169, 7, 'Nota emitida', '2018-05-24'),
+(4, 2, 'Derek', '11, 10', 'Lavadora de Roupas, Geladeira/Refrigerador', 3881, 11, 'Pagamento aprovado', '2018-05-24'),
+(5, 2, 'Derek', '14', 'Liquidificador Smart Gourmet', 2118, 7, 'Pedido enviado', '2018-05-24'),
+(6, 3, 'juca', '19, 18', 'God of War, Guarda Roupa Casal', 1298, 7, 'Em Processamento', '0000-00-00'),
+(7, 3, 'juca', '19, 18, 16, 17', 'God of War, Guarda Roupa Casal, Mesa Olímpia, Armário p/ Cozinha', 1942, 10, 'Em Processamento', '0000-00-00'),
+(8, 4, 'edu', '14, 13, 15', 'Liquidificador Smart Gourmet, Batedeira Mix Pro, Torradeira Smart', 6998, 1, 'Pagamento aprovado', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -86,9 +93,10 @@ INSERT INTO `produtos` (`id`, `nome`, `marca`, `descricao`, `categoria`, `preco`
 (16, 'Mesa Olímpia', 'Leifer', 'Mesa Olímpia New 1,60x0,80m Canela - Leifer', 'Móveis e Decoração', '424.99', 'produto16.png'),
 (17, 'Armário p/ Cozinha', 'Poquema', 'Armário P/ Cozinha 8 Portas 2 Gavetas - Poquema Kit Manu 8p - Branco/Preto', 'Móveis e Decoração', '219.00', 'produto17.png'),
 (18, 'Guarda Roupa Casal', 'Quarta Divisao Moveis', 'Guarda Roupa Casal Sevilha Mdp 3 Portas Correr 6 Gavetas Com Espelho Nevada', 'Móveis e Decoração', '1099.00', 'produto18.png'),
-(29, 'God Of War', 'Playstation', 'Game God Of War - PS4', 'Games, Livros e Filmes', '199.00', 'produto19.png'),
-(30, 'Coleção Blu-ray Harry Potter: Anos 1-7B', 'Warner', 'Coleção Completa Blu-ray Harry Potter: Anos 1-7B (8 Discos)', 'Games, Livros e Filmes', '149.00', 'produto20.png'),
-(33, 'As Crônicas de Gelo e Fogo - A Guerra dos Tronos ', 'LeYa', 'Livro - As Crônicas de Gelo e Fogo - A Guerra dos Tronos Livro Um [Edição Comemorativa]', 'Games, Livros e Filmes', '34.00', 'produto21.png');
+(19, 'God of War', 'Playstation', 'Game God Of War - PS4', 'Games, Livros e Filmes', '199.00', 'produto19.png'),
+(20, 'Coleção Bluray Harry Potter', 'Warner', 'Coleção Completa Blu-ray Harry Potter: Anos 1-7B (8 Discos)', 'Games, Livros e Filmes', '149.90', 'produto20.png'),
+(31, 'As Crônicas de Gelo e Fogo - A Guerra dos Tronos', 'LeYa', 'Livro - As Crônicas de Gelo e Fogo - A Guerra dos Tronos Livro Um [Edição Comemorativa]', 'Games, Livros e Filmes', '34.95', 'produto21.png'),
+(32, 'Samsung Galaxy S9', 'Samsung', 'Smartphone Samsung Galaxy S9 Dual Chip Android 8.0 Tela 5.8" Octa-Core 2.8GHz 128GB 4G Câmera 12MP - Ultravioleta', 'Celulares', '4299.00', 'produto22.png');
 
 -- --------------------------------------------------------
 
@@ -119,7 +127,9 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 
 INSERT INTO `usuarios` (`id`, `nome`, `login`, `senha`, `email`, `cpf`, `endereco`, `complemento`, `cep`, `bairro`, `cidade`, `estado`, `tipo`) VALUES
 (1, 'vendedor', 'vendedor', 'YWRtaW4=', 'vendedor@gmail.com', '2147483647', 'rua 12', 'casa 1', 11111111, 'borel', 'rio de janeiro', 'RJ', 'vendedor'),
-(2, 'Derek', 'derek', 'MTIz', 'derek@gmail.com', '2147483647', 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario');
+(2, 'Derek', 'derek', 'MTIz', 'derek@gmail.com', '2147483647', 'Rua 123', '204', 1231231, 'Barra', 'Rio de Janeiro', 'RJ', 'usuario'),
+(3, 'juca', 'juca', 'MTIz', 'juca@gmail.com', '12312312311', 'rua do juca', '215', 11111111, 'juca da tijuca', 'rio de juqueiro', 'rj', 'usuario'),
+(4, 'edu', 'educu', 'MTIz', 'edu@cu.com', '12312432141', 'asdfkjashbd', 'kasjbdnsaj', 12312312, 'adskjfnasjdn', 'kjsbndkjansd', 'as', 'usuario');
 
 --
 -- Indexes for dumped tables
